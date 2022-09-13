@@ -8,7 +8,7 @@
 #' @return A vector containing parameter estimates
 #' @export
 #'
-#' @examples pff <- aomg(dfadsfa)
+#' @examples
 
 ai.compute <- function(NFmin, NPmin, NFmaj, NPmaj)
 
