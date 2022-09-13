@@ -7,16 +7,16 @@
 ai.compute(NFmin, NPmin, NFmaj, NPmaj)
 }
 \arguments{
-\item{NFmin}{Value2}
+\item{NFmin}{Number of applicants failing selection from the minority group}
 
-\item{NPmin}{Value5}
+\item{NPmin}{Number of applicants passing selection from the minority group}
 
-\item{NFmaj}{Value3}
+\item{NFmaj}{Number of applicants failing selection from the majority group}
 
-\item{NPmaj}{Value2}
+\item{NPmaj}{Number of applicants passing selection from the majority group}
 }
 \value{
-A vector containing parameter estimates
+A vector containing the results.
 }
 \description{
 Calculate Statistical and Practical Significance for AI Values

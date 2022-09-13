@@ -1,11 +1,11 @@
 #' Calculate Statistical and Practical Significance for AI Values
 #'
-#' @param NFmin Value2
-#' @param NPmin Value5
-#' @param NFmaj Value3
-#' @param NPmaj Value2
+#' @param NFmin Number of applicants failing selection from the minority group
+#' @param NPmin Number of applicants passing selection from the minority group
+#' @param NFmaj Number of applicants failing selection from the majority group
+#' @param NPmaj Number of applicants passing selection from the majority group
 #'
-#' @return A vector containing parameter estimates
+#' @return A vector containing the results.
 #' @export
 #'
 #' @examples
@@ -27,7 +27,7 @@ ai.compute <- function(NFmin, NPmin, NFmaj, NPmaj)
   #1. Z-test
 
   Zt     <- ((NPmin/Nmin)-(NPmaj/Nmaj)) / sqrt(SRt*(1-SRt)*(1/Nmin+1/Nmaj)) # (4.2)
-  Zt_p   <- (1-pnorm(abs(Zt)))*2 # 2-tailed !
+  Zt_p   <- (1-stats::pnorm(abs(Zt)))*2 # 2-tailed !
 
   #dhyper(NPmaj,Nmaj,Nmin,NPt)
 
@@ -37,12 +37,12 @@ ai.compute <- function(NFmin, NPmin, NFmaj, NPmaj)
 
   for (i in 0:NPmin)
   {
-    FEThyp<- FEThyp + dhyper(NPmaj + i, Nmaj, Nmin, NPt)
+    FEThyp<- FEThyp + stats::dhyper(NPmaj + i, Nmaj, Nmin, NPt)
   } ## Computes FET one-tailed
 
   FEThyp <- FEThyp*2 # Multiplies *2 for FET two-tailed
 
-  LMPhyp <- dhyper(NPmaj, Nmaj, Nmin, NPt)
+  LMPhyp <- stats::dhyper(NPmaj, Nmaj, Nmin, NPt)
   LMP    <- FEThyp-LMPhyp/2
 
   LMP
