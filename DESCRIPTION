@@ -1,6 +1,6 @@
 Package: advserseimpact
 Title: Statistical and Practical Significance Testing for Adverse Impact
-Version: 0.0.0.9000
+Version: 0.0.0.95
 Authors@R: c(
     person("Dragos", "Iliescu", email = "dragos.iliescu@fpse.unibuc.ro", role = "cre"),
     person("George", "Gunnesch-Luca", email = "george.gunnesch-luca@fau.de", role = "aut"))
