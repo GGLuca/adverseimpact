@@ -1,8 +1,9 @@
 Package: advserseimpact
-Title: Make Regular Expressions More Exciting
+Title: Statistical and Practical Significance Testing for Adverse Impact
 Version: 0.0.0.9000
-Authors@R: 
-    person("Dragoş", "Iliescu", , "jane@example.com", role = c("aut", "cre"))
+Authors@R: c(
+    person("Dragos", "Iliescu", email = "dragos.iliescu@fpse.unibuc.ro", role = "cre"),
+    person("George", "Gunnesch-Luca", email = "george.gunnesch-luca@fau.de", role = "aut"))
 Description: Convenience functions to make some common tasks with string
     manipulation and regular expressions a bit easier.
 License: MIT + file LICENSE
