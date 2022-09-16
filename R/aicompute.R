@@ -29,8 +29,6 @@ ai.compute <- function(NFmin, NPmin, NFmaj, NPmaj)
   Zt     <- ((NPmin/Nmin)-(NPmaj/Nmaj)) / sqrt(SRt*(1-SRt)*(1/Nmin+1/Nmaj)) # (4.2)
   Zt_p   <- (1-stats::pnorm(abs(Zt)))*2 # 2-tailed !
 
-  #dhyper(NPmaj,Nmaj,Nmin,NPt)
-
   #2. LMP test
 
   FEThyp <- 0;
