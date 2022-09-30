@@ -16,9 +16,20 @@ knitr::opts_chunk$set(
 # advserseimpact
 
 <!-- badges: start -->
+
 <!-- badges: end -->
 
-The goal of advserseimpact is to ...
+# Goal
+
+The goal of advserseimpact is to compute a number of important statistical indicators of adverse impact in selection decisions.
+
+The package computes a total of 6 indicators in 2 large categories:
+
+1) statistical significance measures: the Z-test, and the LMP (Lancaster's Mid-P) test, and
+
+2) practical significance measures: the h-statistic, the Phi-coefficient, the SF (ShortFall) statistic, and the impact ratio.
+
+Input in the function is the 2x2 minority-majority selection matrix, containing 4 values: NPmin (number of participants passing the selection procedure from the minority group), NPmaj (number of participants passing the selection procedure from the majority group), NFmin (number of participants failing the selection procedure from the minority group), NFmaj (number of participants failing the selection procedure from the majority group).
 
 ## Installation
 
