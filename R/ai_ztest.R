@@ -1,3 +1,14 @@
+#' Z-Test
+#'
+#' @param NFmin X
+#' @param NPmin Y
+#' @param NFmaj A
+#' @param NPmaj B
+#'
+#' @return A dataframe containing the z-score and associated p-value.
+#' @export
+#'
+#' @examples
 ai_ztest <- function(NFmin, NPmin, NFmaj, NPmaj) {
 
   # calculate the total sample size of the minority group and majority group
