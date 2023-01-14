@@ -1,5 +1,5 @@
 Package: advserseimpact
-Title: Statistical and Practical Significance Testing for Adverse Impact
+Title: Statistical and Practical Significance Testing for Adverse Ampact in Selection Decisions
 Version: 0.0.0.95
 Authors@R: c(
     person("Dragos", "Iliescu", email = "dragos.iliescu@fpse.unibuc.ro", role = "cre"),
@@ -9,4 +9,6 @@ Description: Convenience functions to make some common tasks with string
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.1
+RoxygenNote: 7.2.3
+Imports: 
+    stats

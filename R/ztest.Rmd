@@ -1,0 +1,142 @@
+---
+title: "ztest"
+author: "Tiana"
+date: "2023-01-14"
+output: html_document
+---
+
+This function calculates the Z-score and p-value for a two-sample proportion test comparing a binary feature in a minority group to the same feature in a majority group. The input parameters are:
+
+NFmin: number of individuals with the feature in the minority group
+NPmin: number of individuals without the feature in the minority group
+NFmaj: number of individuals with the feature in the majority group
+NPmaj: number of individuals without the feature in the majority group
+The function returns a list with two elements:
+
+z_score: the Z-score of the test
+p_value: the p-value of the test assuming a two-tailed test.
+The function first calculates the total sample size of the minority group and majority group separately and stores it in Nmin and Nmaj. Then it calculates the proportion of individuals with the feature in the minority group (p1) and the majority group (p2) . The overall proportion (p) is also calculated. Then it calculates the Z-score using the formula with p1, p2, p, Nmin, and Nmaj. Then, the p-value is calculated using the Z-score and the cumulative distribution function of the standard normal distribution.
+
+```{r}
+z_test_simpler <- function(NFmin, NPmin, NFmaj, NPmaj) {
+
+  # calculate the total sample size of the minority group and majority group
+  Nmin <- NFmin + NPmin # number of individuals in the minority group
+  Nmaj <- NFmaj + NPmaj # number of individuals in the majority group
+
+  # calculate the proportion of individuals with the feature in the minority and majority groups
+  p1 <- NPmin / Nmin # proportion of individuals with feature in minority group
+  p2 <- NPmaj / Nmaj # proportion of individuals with feature in majority group
+
+  # calculate overall proportion of individuals with the feature
+  p <- (NPmin + NPmaj) / (Nmin + Nmaj)
+
+  # calculate the Z-score using the formula
+  z <- (p1 - p2) / sqrt(p * (1 - p) * ((1/Nmin) + (1/Nmaj)))
+
+  # calculate the p-value assuming a two-tailed test
+  p_value <- 2 * (1 - pnorm(abs(z)))
+
+  # return the Z-score and p-value as a list
+  return(data.frame(z_score = z, p_value = p_value))
+}
+```
+
+This function performs a Fisher's Exact Test (FET) for the two-tailed case, which is used to test the null hypothesis that the probability of success (e.g. the proportion of a certain outcome) is the same in two different populations or groups.
+The function takes four arguments as input: NFmin, NPmin, NFmaj, and NPmaj which represent the number of failures and number of successes in each group, respectively.
+It uses the hypergeometric distribution to calculate the cumulative probability of getting a certain number of successes in the minor group (e.g. the group with fewer observations) or more, under the null hypothesis.
+It then subtracts the probability of getting the observed number of successes in the minor group under the null hypothesis, from the cumulative probability, and takes the logarithm of the result.
+Finally, it returns the logarithm of the odds ratio (LMP) which is a measure of association between two variables.
+
+
+```{r}
+fisher_exact_test_simpler <- function(NFmin, NPmin, NFmaj, NPmaj) {
+
+  # Calculate the total number of observations in each group
+  Nmin   <- NFmin + NPmin
+  Nmaj   <- NFmaj + NPmaj
+  
+  # Calculate the cumulative probability of getting a certain number of 
+  # successes in the minor group or more, under the null hypothesis
+  FEThyp <- 0;
+  for (i in 0:NPmin) {
+    FEThyp <- FEThyp + stats::dhyper(NPmaj + i, Nmaj, Nmin, NPmin+NPmaj)
+  } ## Computes FET one-tailed
+  
+  # Multiply by 2 for the two-tailed case
+  FEThyp <- FEThyp*2 
+  
+  # Calculate the probability of getting the observed number of successes 
+  # in the minor group under the null hypothesis
+  LMPhyp <- stats::dhyper(NPmaj, Nmaj, Nmin, NPmin+NPmaj)
+  
+  # Calculate the LMP (logarithm of the odds ratio)
+  LMP    <- FEThyp-LMPhyp/2
+  
+  # Return the LMP
+  return(LMP)
+}
+
+```
+
+```{r}
+
+calculate_hstat <- function(NFmin, NPmin, NFmaj, NPmaj) {
+  
+  Nmin   <- NFmin + NPmin
+  Nmaj   <- NFmaj + NPmaj
+  SRmin  <- NPmin / Nmin
+  SRmaj  <- NPmaj / Nmaj
+
+  #calculating the hstat value
+  hstat  <- 2*(asin(SRmaj)-asin(SRmin))
+  
+  #returning the hstat value
+  return(hstat)
+}
+
+```
+
+```{r}
+
+phi_simple <- function(NFmin, NPmin, NFmaj, NPmaj) {
+  # Compute the marginal sums for the 2x2 contingency table
+  Nmin <- NFmin + NPmin    # number of occurrences of the first event in the first group
+  Nmaj <- NFmaj + NPmaj    # number of occurrences of the first event in the second group
+
+  # Compute the Phi coefficient
+  Phi <- (NFmin*NPmaj - NFmaj*NPmin) / sqrt((NFmin + NFmaj)*(NPmin + NPmaj)*(NFmin + NPmin)*(NFmaj + NPmaj))  # numerator of Phi
+
+  # Return the Phi coefficient as output
+  return(Phi)
+}
+```
+
+```{r}
+SF_calc_simple <- function(NFmin, NPmin, NFmaj, NPmaj) {
+  # Compute the marginal sum for the 2x2 contingency table
+  Nmin <- NFmin + NPmin    # number of occurrences of the first event in the first group
+  
+  # Compute the SF value
+  SF <- ceiling(NPmaj / (NFmaj + NPmaj) * Nmin) - NPmin   # SF calculation using the provided formula
+  
+  # Return the SF value as output
+  return(SF)
+}
+```
+
+```{r}
+compute_IR <- function(NFmin, NPmin, NFmaj, NPmaj){
+  Nmin <- NFmin + NPmin
+  Nmaj <- NFmaj + NPmaj
+  
+  SRmin <- NPmin / Nmin
+  SRmaj <- NPmaj / Nmaj
+  IR <- SRmin / SRmaj
+  return(IR)
+}
+
+
+```
+
+
