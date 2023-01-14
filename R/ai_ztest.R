@@ -1,11 +1,11 @@
-#' Z-Test
+#' Z-score and p-value for a two-sample proportion test
 #'
-#' @param NFmin X
-#' @param NPmin Y
-#' @param NFmaj A
-#' @param NPmaj B
+#' @param NFmin Number of participants failing the selection procedure from the minority group
+#' @param NPmin Number of participants passing the selection procedure from the minority group
+#' @param NFmaj number of participants failing the selection procedure from the majority group
+#' @param NPmaj Number of participants passing the selection procedure from the majority group
 #'
-#' @return A dataframe containing the z-score and associated p-value.
+#' @return A data frame containing the z-score and associated p-value.
 #' @export
 #'
 #' @examples
