@@ -7,7 +7,13 @@
 ai_ir(NFmin, NPmin, NFmaj, NPmaj)
 }
 \arguments{
-\item{NPmaj}{}
+\item{NFmin}{Number of participants failing the selection procedure from the minority group}
+
+\item{NPmin}{Number of participants passing the selection procedure from the minority group}
+
+\item{NFmaj}{number of participants failing the selection procedure from the majority group}
+
+\item{NPmaj}{Number of participants passing the selection procedure from the majority group}
 }
 \description{
 Title

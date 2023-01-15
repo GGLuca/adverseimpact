@@ -1,9 +1,9 @@
 #' Title
 #'
-#' @param NFmin
-#' @param NPmin
-#' @param NFmaj
-#' @param NPmaj
+#' @param NFmin Number of participants failing the selection procedure from the minority group
+#' @param NPmin Number of participants passing the selection procedure from the minority group
+#' @param NFmaj number of participants failing the selection procedure from the majority group
+#' @param NPmaj Number of participants passing the selection procedure from the majority group
 #'
 #' @return
 #' @export
