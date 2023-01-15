@@ -1,3 +1,14 @@
+#' Title
+#'
+#' @param NFmin
+#' @param NPmin
+#' @param NFmaj
+#' @param NPmaj
+#'
+#' @return
+#' @export
+#'
+#' @examples
 ai_phi <- function(NFmin, NPmin, NFmaj, NPmaj) {
   # Compute the marginal sums for the 2x2 contingency table
   Nmin <- NFmin + NPmin    # number of occurrences of the first event in the first group
