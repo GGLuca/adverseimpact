@@ -6,18 +6,16 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-# Goal
-
 The goal of advserseimpact is to compute a number of important
 statistical indicators of adverse impact in selection decisions.
 
 The package computes a total of 6 indicators in 2 large categories:
 
-1)  statistical significance measures: the Z-test, and the LMP
-    (Lancaster’s Mid-P) test, and
+statistical significance measures: the Z-test, and the LMP (Lancaster’s
+Mid-P) test, and
 
-2)  practical significance measures: the h-statistic, the
-    Phi-coefficient, the SF (ShortFall) statistic, and the impact ratio.
+practical significance measures: the h-statistic, the Phi-coefficient,
+the SF (ShortFall) statistic, and the impact ratio.
 
 Input in the function is the 2x2 minority-majority selection matrix,
 containing 4 values: NPmin (number of participants passing the selection
@@ -65,3 +63,10 @@ up-to-date. `devtools::build_readme()` is handy for this. You could also
 use GitHub Actions to re-render `README.Rmd` every time you push. An
 example workflow can be found here:
 <https://github.com/r-lib/actions/tree/v1/examples>.
+
+You can also embed plots, for example:
+
+<img src="man/figures/README-pressure-1.png" width="100%" />
+
+In that case, don’t forget to commit and push the resulting figure
+files, so they display on GitHub and CRAN.
