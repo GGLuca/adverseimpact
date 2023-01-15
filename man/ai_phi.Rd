@@ -15,6 +15,9 @@ ai_phi(NFmin, NPmin, NFmaj, NPmaj)
 
 \item{NPmaj}{Number of participants passing the selection procedure from the majority group}
 }
+\value{
+A vector containing the result
+}
 \description{
 Title
 }

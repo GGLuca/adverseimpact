@@ -2,7 +2,7 @@
 % Please edit documentation in R/ai_ir.R
 \name{ai_ir}
 \alias{ai_ir}
-\title{Title}
+\title{Computes the}
 \usage{
 ai_ir(NFmin, NPmin, NFmaj, NPmaj)
 }
@@ -15,6 +15,9 @@ ai_ir(NFmin, NPmin, NFmaj, NPmaj)
 
 \item{NPmaj}{Number of participants passing the selection procedure from the majority group}
 }
+\value{
+A vector containing the result
+}
 \description{
-Title
+Computes the
 }
