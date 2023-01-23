@@ -31,19 +31,6 @@ containing 4 values:
 - `NFmaj` (number of participants failing the selection procedure from
   the majority group).
 
-## Example
-
-We consider a selection scenario in which disparity is considered
-between men and women hires. Women are designated as the minority group.
-A total of 35 applicants participate, out of which 10 women and 25 men.
-From the female candidates, 2 are selected and 8 are rejected, and from
-the male candidates 15 are selected and 10 are rejected. A total of 17
-candidates are thus selected, and 18 are rejected.
-
-In this case,
-
-`NFmin` = 9 `NPmin` = 2 `NFmaj` = 10 `NPmaj` = 15
-
 ## Installation
 
 You can install the development version of advserseimpact from
@@ -56,7 +43,16 @@ devtools::install_github("GGLuca/adverseimpact")
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+We consider a selection scenario in which disparity is considered
+between men and women hires. Women are designated as the minority group.
+A total of 35 applicants participate, out of which 10 women and 25 men.
+From the female candidates, 2 are selected and 8 are rejected, and from
+the male candidates 15 are selected and 10 are rejected. A total of 17
+candidates are thus selected, and 18 are rejected.
+
+In this case,
+
+`NFmin` = 9, `NPmin` = 2, `NFmaj` = 10, `NPmaj` = 15
 
 ``` r
 library(advserseimpact)
