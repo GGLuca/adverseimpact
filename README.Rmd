@@ -43,13 +43,17 @@ devtools::install_github("GGLuca/adverseimpact")
 ```
 ## Example
 
-We consider a selection scenario in which disparity is considered between men and women hires. Women are designated as the minority group. A total of 35 applicants participate, out of which 10 women and 25 men. From the female candidates, 2 are selected and 8 are rejected, and from the male candidates 15 are selected and 10 are rejected. A total of 17 candidates are thus selected, and 18 are rejected.
+The data in this example stems from 
 
-In this case,
+In this selection scenario, we take into account the disparity between male and female hires, with women being designated as the minority group. Out of 35 applicants, 10 are women and 25 are men. Among the female candidates, 2 are chosen and 8 are not, while 15 of the male candidates are selected and 10 are not. Therefore, a total of 17 candidates are chosen and 18 are not.
+
+As such,
 
 `NFmin` = 9, `NPmin` = 2, `NFmaj` = 10, `NPmaj` = 15 
 
 ```{r example}
 library(advserseimpact)
 ## basic example code
+
+
 ```
