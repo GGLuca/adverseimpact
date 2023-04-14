@@ -6,30 +6,35 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-## Goal
+# Description:
 
-The goal of advserseimpact is to compute a number of important
-statistical indicators of adverse impact in selection decisions. The
-package containts functions that compute a total of 6 indicators in 2
-large categories:
+This R package provides a suite of functions for assessing adverse
+impact in employee selection and hiring procedures. Adverse impact
+occurs when a selection procedure disproportionately excludes members of
+a protected class, such as race or gender. The package includes
+functions to compute statistical tests, such as the Z-test and LMP test,
+as well as practical measures, like the h-statistic, Phi-coefficient,
+and adjusted shortfall. By offering a comprehensive set of tools, this
+package helps organizations evaluate their selection procedures and make
+data-driven decisions to minimize adverse impact and promote fairness in
+the hiring process.
 
-1.  Statistical significance measures: the Z-test, and the LMP
-    (Lancaster’s Mid-P) test, and
+Main Functions:
 
-2.  Practical significance measures: the h-statistic, the
-    Phi-coefficient, the SF (ShortFall) statistic, and the impact ratio.
+1.  
+2.  
+3.  
+4.  
+5.  
 
-The functions require the 2x2 minority-majority selection matrix,
-containing 4 values:
+# Use Cases
 
-- `NPmin` (number of participants passing the selection procedure from
-  the minority group),
-- `NPmaj` (number of participants passing the selection procedure from
-  the majority group),
-- `NFmin` (number of participants failing the selection procedure from
-  the minority group),
-- `NFmaj` (number of participants failing the selection procedure from
-  the majority group).
+- Human resources professionals evaluating the fairness of their
+  selection processes.
+- Organizations aiming to reduce adverse impact and promote equal
+  opportunity in their hiring practices.
+- Researchers studying the impact of selection procedures on different
+  demographic groups.
 
 ## Installation
 
