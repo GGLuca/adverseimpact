@@ -6,7 +6,7 @@
 \alias{advserseimpact-package}
 \title{advserseimpact: Statistical and Practical Significance Testing for Adverse Ampact in Selection Decisions}
 \description{
-Convenience functions to make some common tasks with string manipulation and regular expressions a bit easier.
+This R package provides a suite of functions for assessing adverse impact in employee selection and hiring procedures. Adverse impact occurs when a selection procedure disproportionately excludes members of a protected class, such as race or gender. The package includes functions to compute statistical tests, such as the Z-test and LMP test, as well as practical measures, like the h-statistic, Phi-coefficient, and adjusted shortfall. By offering a comprehensive set of tools, this package helps organizations evaluate their selection procedures and make data-driven decisions to minimize adverse impact and promote fairness in the hiring process.
 }
 \author{
 \strong{Maintainer}: Dragos Iliescu \email{dragos.iliescu@fpse.unibuc.ro}
