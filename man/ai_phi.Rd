@@ -2,7 +2,7 @@
 % Please edit documentation in R/ai_phi.R
 \name{ai_phi}
 \alias{ai_phi}
-\title{Title}
+\title{Calculate the Phi Coefficient}
 \usage{
 ai_phi(NFmin, NPmin, NFmaj, NPmaj)
 }
@@ -11,13 +11,26 @@ ai_phi(NFmin, NPmin, NFmaj, NPmaj)
 
 \item{NPmin}{Number of participants passing the selection procedure from the minority group}
 
-\item{NFmaj}{number of participants failing the selection procedure from the majority group}
+\item{NFmaj}{Number of participants failing the selection procedure from the majority group}
 
 \item{NPmaj}{Number of participants passing the selection procedure from the majority group}
 }
 \value{
-A vector containing the result
+A numeric value representing the Phi coefficient.
 }
 \description{
-Title
+This function calculates the Phi coefficient, a measure of association between two binary variables.
+In this context, the Phi coefficient represents the association between group membership (minority or majority)
+and selection outcome (pass or fail).
+}
+\examples{
+# Example data
+NFmin <- 10 # Number of participants failing the selection procedure from the minority group
+NPmin <- 5  # Number of participants passing the selection procedure from the minority group
+NFmaj <- 30 # Number of participants failing the selection procedure from the majority group
+NPmaj <- 15 # Number of participants passing the selection procedure from the majority group
+
+# Calculate the Phi coefficient
+result <- ai_phi(NFmin, NPmin, NFmaj, NPmaj)
+result
 }

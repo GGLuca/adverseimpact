@@ -2,7 +2,7 @@
 % Please edit documentation in R/ai_sf.R
 \name{ai_sf}
 \alias{ai_sf}
-\title{Title}
+\title{Calculate the Shortfall (SF) Value}
 \usage{
 ai_sf(NFmin, NPmin, NFmaj, NPmaj)
 }
@@ -11,13 +11,26 @@ ai_sf(NFmin, NPmin, NFmaj, NPmaj)
 
 \item{NPmin}{Number of participants passing the selection procedure from the minority group}
 
-\item{NFmaj}{number of participants failing the selection procedure from the majority group}
+\item{NFmaj}{Number of participants failing the selection procedure from the majority group}
 
 \item{NPmaj}{Number of participants passing the selection procedure from the majority group}
 }
 \value{
-A vector containing the result
+A numeric value representing the Shortfall (SF) value.
 }
 \description{
-Title
+This function calculates the Shortfall (SF) value, which represents the difference between
+the expected number of selected minority applicants (based on the majority group's selection rate)
+and the actual number of selected minority applicants.
+}
+\examples{
+# Example data
+NFmin <- 10 # Number of participants failing the selection procedure from the minority group
+NPmin <- 5  # Number of participants passing the selection procedure from the minority group
+NFmaj <- 30 # Number of participants failing the selection procedure from the majority group
+NPmaj <- 15 # Number of participants passing the selection procedure from the majority group
+
+# Calculate the Shortfall (SF) value
+result <- ai_sf(NFmin, NPmin, NFmaj, NPmaj)
+result
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/ai_hstat.R
 \name{ai_hstat}
 \alias{ai_hstat}
-\title{Title}
+\title{Calculate the H-Statistic}
 \usage{
 ai_hstat(NFmin, NPmin, NFmaj, NPmaj)
 }
@@ -11,13 +11,26 @@ ai_hstat(NFmin, NPmin, NFmaj, NPmaj)
 
 \item{NPmin}{Number of participants passing the selection procedure from the minority group}
 
-\item{NFmaj}{number of participants failing the selection procedure from the majority group}
+\item{NFmaj}{Number of participants failing the selection procedure from the majority group}
 
 \item{NPmaj}{Number of participants passing the selection procedure from the majority group}
 }
 \value{
-A vector containing the result
+A numeric value representing the H-Statistic.
 }
 \description{
-Title
+This function calculates the H-Statistic, a measure of the difference between the arcsine-transformed
+selection rates of minority and majority groups. The H-Statistic is used to assess disparities in
+selection rates between the two groups.
+}
+\examples{
+# Example data
+NFmin <- 10 # Number of participants failing the selection procedure from the minority group
+NPmin <- 5  # Number of participants passing the selection procedure from the minority group
+NFmaj <- 30 # Number of participants failing the selection procedure from the majority group
+NPmaj <- 15 # Number of participants passing the selection procedure from the majority group
+
+# Calculate the H-Statistic
+result <- ai_hstat(NFmin, NPmin, NFmaj, NPmaj)
+result
 }
