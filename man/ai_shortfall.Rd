@@ -15,6 +15,21 @@ ai_shortfall(NFmin, NPmin, NFmaj, NPmaj)
 
 \item{NPmaj}{Number of participants passing the selection procedure from the majority group}
 }
+\value{
+A numeric value representing the adjusted shortfall (SFadj) calculated as the
+shortfall (SF) divided by the total number of minority applicants (Nmin).
+}
 \description{
-Further documentation goes here:
+Adjusted Shortfall
+}
+\examples{
+# Example data
+NFmin <- 10 # Number of participants failing the selection procedure from the minority group
+NPmin <- 5  # Number of participants passing the selection procedure from the minority group
+NFmaj <- 30 # Number of participants failing the selection procedure from the majority group
+NPmaj <- 15 # Number of participants passing the selection procedure from the majority group
+
+# Calculate the adjusted shortfall
+result <- ai_shortfall(NFmin, NPmin, NFmaj, NPmaj)
+result
 }
