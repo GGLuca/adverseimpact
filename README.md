@@ -14,10 +14,12 @@ occurs when a selection procedure disproportionately excludes members of
 a protected class, such as race or gender. The package includes
 functions to compute statistical tests, such as the Z-test and LMP test,
 as well as practical measures, like the h-statistic, Phi-coefficient,
-and adjusted shortfall. By offering a comprehensive set of tools, this
-package helps organizations evaluate their selection procedures and make
-data-driven decisions to minimize adverse impact and promote fairness in
-the hiring process.
+and adjusted shortfall.
+
+By offering a comprehensive set of tools, this package helps
+organizations evaluate their selection procedures and make data-driven
+decisions to minimize adverse impact and promote fairness in the hiring
+process.
 
 Main Functions:
 

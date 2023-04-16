@@ -1,14 +1,28 @@
-#' Fisher's Exact Test (FET)
+#' Fisher's Exact Test (FET) for Selection Procedure Outcomes
+#'
+#' This function calculates Fisher's Exact Test (FET) for a 2x2 contingency table representing selection procedure outcomes
+#' for minority and majority groups. It helps to assess the statistical significance of the association between group membership
+#' and selection outcomes.
 #'
 #' @param NFmin Number of participants failing the selection procedure from the minority group
 #' @param NPmin Number of participants passing the selection procedure from the minority group
-#' @param NFmaj number of participants failing the selection procedure from the majority group
+#' @param NFmaj Number of participants failing the selection procedure from the majority group
 #' @param NPmaj Number of participants passing the selection procedure from the majority group
 #'
-#' @return A vector containing the result
+#' @return A list containing the Fisher's Exact Test results (p-value and odds ratio).
 #' @export
 #'
 #' @examples
+#' # Example data
+#' NFmin <- 10 # Number of participants failing the selection procedure from the minority group
+#' NPmin <- 5  # Number of participants passing the selection procedure from the minority group
+#' NFmaj <- 30 # Number of participants failing the selection procedure from the majority group
+#' NPmaj <- 15 # Number of participants passing the selection procedure from the majority group
+#'
+#' # Calculate Fisher's Exact Test results
+#' result <- ai_fisher(NFmin, NPmin, NFmaj, NPmaj)
+#' result
+
 ai_fisher <- function(NFmin, NPmin, NFmaj, NPmaj) {
 
   # Calculate the total number of observations in each group
