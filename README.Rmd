@@ -54,8 +54,11 @@ The data in this example stems from Morris (2017). In this selection scenario, w
 library(advserseimpact)
 ## basic example code
 
-# Z (Two Standard Deviation) Test
+# Z (Two Standard Deviation) Test (Formula 4.2)
+
 ai_ztest(8, 2, 10, 15)
+
+
 ```
 
 # References

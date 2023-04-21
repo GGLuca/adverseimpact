@@ -60,7 +60,8 @@ are not.
 library(advserseimpact)
 ## basic example code
 
-# Z (Two Standard Deviation) Test
+# Z (Two Standard Deviation) Test (Formula 4.2)
+
 ai_ztest(8, 2, 10, 15)
 #>     z_score    p_value
 #> 1 -2.138963 0.03243865
