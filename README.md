@@ -21,15 +21,7 @@ organizations evaluate their selection procedures and make data-driven
 decisions to minimize adverse impact and promote fairness in the hiring
 process.
 
-Main Functions:
-
-1.  
-2.  
-3.  
-4.  
-5.  
-
-# Use Cases
+# Some Use Cases
 
 - Human resources professionals evaluating the fairness of their
   selection processes.
@@ -59,9 +51,11 @@ female candidates, 2 are chosen and 8 are not, while 15 of the male
 candidates are selected and 10 are not. Therefore, a total of 17
 candidates are chosen and 18 are not.
 
-As such,
-
-`NFmin` = 9, `NPmin` = 2, `NFmaj` = 10, `NPmaj` = 15
+| Group | Fail        | Pass        | Total |
+|-------|-------------|-------------|-------|
+| Women | 8 (NF_min)  | 2 (NP_min)  | 10    |
+| Men   | 10 (NF_maj) | 15 (NP_maj) | 25    |
+| Total | 18 (NN_t)   | 17 (NP_t)   | 35    |
 
 ``` r
 library(advserseimpact)

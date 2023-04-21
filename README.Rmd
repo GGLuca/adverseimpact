@@ -25,16 +25,7 @@ This R package provides a suite of functions for assessing adverse impact in emp
 
 By offering a comprehensive set of tools, this package helps organizations evaluate their selection procedures and make data-driven decisions to minimize adverse impact and promote fairness in the hiring process.
 
-Main Functions:
-
-1.
-2.
-3.
-4.
-5.
-
-
-# Use Cases
+# Some Use Cases
 
 - Human resources professionals evaluating the fairness of their selection processes.
 - Organizations aiming to reduce adverse impact and promote equal opportunity in their hiring practices.
@@ -54,9 +45,12 @@ The data in this example stems from
 
 In this selection scenario, we take into account the disparity between male and female hires, with women being designated as the minority group. Out of 35 applicants, 10 are women and 25 are men. Among the female candidates, 2 are chosen and 8 are not, while 15 of the male candidates are selected and 10 are not. Therefore, a total of 17 candidates are chosen and 18 are not.
 
-As such,
+| Group      | Fail        | Pass        | Total |
+|------------|-------------|-------------|-------|
+| Women      |   8 (NF_min)|   2 (NP_min)|   10  |
+| Men        |  10 (NF_maj)|  15 (NP_maj)|   25  |
+| Total      |  18 (NN_t)  |  17 (NP_t)  |   35  |
 
-`NFmin` = 9, `NPmin` = 2, `NFmaj` = 10, `NPmaj` = 15 
 
 ```{r example}
 library(advserseimpact)
