@@ -1,4 +1,4 @@
-Package: advserseimpact
+Package: adverseimpact
 Title: Statistical and Practical Significance Testing for Adverse Ampact in Selection Decisions.
 Version: 0.0.0.92
 Authors@R: c(
