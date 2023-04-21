@@ -42,14 +42,13 @@ devtools::install_github("GGLuca/adverseimpact")
 
 ## Example
 
-The data in this example stems from
-
-In this selection scenario, we take into account the disparity between
-male and female hires, with women being designated as the minority
-group. Out of 35 applicants, 10 are women and 25 are men. Among the
-female candidates, 2 are chosen and 8 are not, while 15 of the male
-candidates are selected and 10 are not. Therefore, a total of 17
-candidates are chosen and 18 are not.
+The data in this example stems from Morris (2017). In this selection
+scenario, we take into account the disparity between male and female
+hires, with women being designated as the minority group. Out of 35
+applicants, 10 are women and 25 are men. Among the female candidates, 2
+are chosen and 8 are not, while 15 of the male candidates are selected
+and 10 are not. Therefore, a total of 17 candidates are chosen and 18
+are not.
 
 | Group | Fail        | Pass        | Total |
 |-------|-------------|-------------|-------|
@@ -60,4 +59,14 @@ candidates are chosen and 18 are not.
 ``` r
 library(advserseimpact)
 ## basic example code
+
+# Z (Two Standard Deviation) Test
+ai_ztest(8, 2, 10, 15)
+#>     z_score    p_value
+#> 1 -2.138963 0.03243865
 ```
+
+# References
+
+Morris, S. B. (2017). Statistical significance testing in adverse impact
+analysis. In Adverse impact analysis. Routledge.
