@@ -9,6 +9,7 @@
 #' @param NFmaj Number of participants failing the selection procedure from the majority group
 #' @param NPmaj Number of participants passing the selection procedure from the majority group
 #'
+#' @importFrom stats dhyper
 #' @return A data frame containing the z-score and associated p-value.
 #' @export
 #'

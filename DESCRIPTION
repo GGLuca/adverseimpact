@@ -1,5 +1,5 @@
 Package: adverseimpact
-Title: Statistical and Practical Significance Testing for Adverse Ampact in Selection Decisions.
+Title: Statistical and Practical Significance Testing for Adverse Ampact in Selection Decisions
 Version: 0.0.0.92
 Authors@R: c(
     person("Dragos", "Iliescu", email = "dragos.iliescu@fpse.unibuc.ro", role = "cre"),
