@@ -16,10 +16,10 @@
 #' NPmaj <- 532
 #'
 #' # Calculate the absolute disparity (AD) and absolute impact (AI)
-#' disparity_result <- ai_disparity(NFmin, NPmin, NFmaj, NPmaj)
+#' disparity_result <- ai_disp(NFmin, NPmin, NFmaj, NPmaj)
 #' print(disparity_result)
 #'
-ai_disparity <- function(NFmin, NPmin, NFmaj, NPmaj) {
+ai_disp <- function(NFmin, NPmin, NFmaj, NPmaj) {
 
   # Calculate the total number of selected applicants (NPt) and total number of applicants (N)
   NPt <- NPmin + NPmaj

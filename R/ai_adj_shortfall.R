@@ -18,10 +18,10 @@
 #' NPmaj <- 15 # Number of participants passing the selection procedure from the majority group
 #'
 #' # Calculate the adjusted shortfall
-#' result <- ai_shortfall(NFmin, NPmin, NFmaj, NPmaj)
+#' result <- ai_sfadj(NFmin, NPmin, NFmaj, NPmaj)
 #' result
 
-ai_shortfall <- function(NFmin, NPmin, NFmaj, NPmaj) {
+ai_sfadj <- function(NFmin, NPmin, NFmaj, NPmaj) {
   # Calculate the total number of minority (Nmin) and majority (Nmaj) applicants
   Nmin <- NFmin + NPmin
   Nmaj <- NFmaj + NPmaj

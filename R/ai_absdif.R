@@ -16,11 +16,11 @@
 #' # For men with a selection rate of 75% and women with a selection rate of 60%
 #' p1 <- 0.75
 #' p2 <- 0.60
-#' absolute_difference <- ai_ad(p1, p2)
+#' absolute_difference <- ai_absdif(p1, p2)
 #' print(absolute_difference)
 #'
 #' @export
-ai_ad <- function(p1, p2) {
+ai_absdif <- function(p1, p2) {
   # Calculate and return the absolute difference in selection rates
   absolute_difference <- abs(p1 - p2)
   return(absolute_difference)

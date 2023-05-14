@@ -16,9 +16,9 @@
 #' NPmin <- 75
 #' NFmaj <- 100
 #' NPmaj <- 300
-#' ai_LMP(NFmin, NPmin, NFmaj, NPmaj)
+#' ai_lmp(NFmin, NPmin, NFmaj, NPmaj)
 
-ai_LMP <- function(NFmin, NPmin, NFmaj, NPmaj) {
+ai_lmp <- function(NFmin, NPmin, NFmaj, NPmaj) {
   # Calculate the total number of minority and majority group members
   Nmin <- NFmin + NPmin
   Nmaj <- NFmaj + NPmaj

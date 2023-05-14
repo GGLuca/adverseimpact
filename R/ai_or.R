@@ -1,32 +1,34 @@
-#' Calculate Odds Ratio
+#' AI Odds Ratio Calculation
 #'
-#' This function takes the selection rates of two groups (e.g., men and women)
-#' and calculates the odds ratio.
+#' This function calculates the odds ratio between two groups (a minority group and a majority group)
+#' based on the number of participants passing or failing a selection procedure.
 #'
-#' The algorithm used in this function is based on the method described in:
-#' Oswald, F.L., Dunleavy, E.M., & Shaw, A. (2017). Measuring practical significance in adverse
-#' impact analysis. In S.B. Morris & E.M. Dunleavy (Eds.), Adverse Impact Analysis:
-#' Understanding Data, Statistics, and Risk (p. 105). Routledge.
+#' @param NFmin Number of participants failing the selection procedure from the minority group
+#' @param NPmin Number of participants passing the selection procedure from the minority group
+#' @param NFmaj Number of participants failing the selection procedure from the majority group
+#' @param NPmaj Number of participants passing the selection procedure from the majority group
 #'
-#' @param p1 Selection rate for the first group (e.g., men)
-#' @param p2 Selection rate for the second group (e.g., women)
-#'
-#' @return The odds ratio, a measure of association between the selection rates of two groups.
+#' @return The odds ratio
+#' @export
 #'
 #' @examples
-#' # For men with a selection rate of 75% and women with a selection rate of 60%
-#' p1 <- 0.75
-#' p2 <- 0.60
-#' odds_ratio <- ai_or(p1, p2)
-#' print(odds_ratio)
-#'
-#' @export
-ai_or <- function(p1, p2) {
-  # Calculate odds for each group
+#' ai_odds(30, 70, 40, 60)
+ai_odds <- function(NFmin, NPmin, NFmaj, NPmaj) {
+  # calculating probabilities of passing for each group
+  # for minority group
+  p1 <- NPmin / (NFmin + NPmin)
+  # for majority group
+  p2 <- NPmaj / (NFmaj + NPmaj)
+
+  # calculating odds for each group
+  # for minority group
   odds_g1 <- p1 / (1 - p1)
+  # for majority group
   odds_g2 <- p2 / (1 - p2)
 
-  # Calculate and return the odds ratio
+  # calculating odds ratio
   odds_ratio <- odds_g1 / odds_g2
+
+  # returning the odds ratio
   return(odds_ratio)
 }
