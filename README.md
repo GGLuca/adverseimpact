@@ -57,7 +57,7 @@ are not.
 | Total | 18 (NN_t)   | 17 (NP_t)   | 35    |
 
 ``` r
-library(advserseimpact)
+library(adverseimpact)
 ## basic example code
 
 # Z (Two Standard Deviation) Test (Formula 4.2)
@@ -69,5 +69,23 @@ ai_ztest(8, 2, 10, 15)
 
 # References
 
-Morris, S. B. (2017). Statistical significance testing in adverse impact
-analysis. In Adverse impact analysis. Routledge.
+- Morris, S.B. (2017). Statistical Significance Testing in Adverse
+  Impact Analysis. In S.B. Morris & E.M. Dunleavy (Eds.), *Adverse
+  Impact Analysis: Understanding Data, Statistics, and Risk*
+  (pp. 71-91). Routledge.
+
+- Nottingham, A., Iliescu, D., & Rupp, D.E. (2023, May 24-27). Adverse
+  Impact Statistics across Selection Stages: A Monte Carlo Simulation
+  \[Poster presentation\]. European Association of Work and
+  Organizational Psychology, Katowice, Poland.
+
+- Nottingham, A., Iliescu, D., & Rupp, D.E. (2023, April 19-22).
+  Choosing the “Right” Adverse Impact across Selection Stages: A Monte
+  Carlo Simulation and Recommended Best Practices \[Poster
+  presentation\]. Society for Industrial and Organizational Psychology
+  Conference, Boston, MA, United States.
+
+- Oswald, F.L., Dunleavy, E.M., & Shaw, A. (2017). Measuring practical
+  significance in adverse impact analysis. In S.B. Morris & E.M.
+  Dunleavy (Eds.), *Adverse Impact Analysis: Understanding Data,
+  Statistics, and Risk* (pp. 92-112). Routledge.
