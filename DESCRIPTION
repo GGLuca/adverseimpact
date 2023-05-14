@@ -1,9 +1,11 @@
 Package: adverseimpact
-Title: Statistical and Practical Significance Testing for Adverse Ampact in Selection Decisions
-Version: 0.0.0.92
+Title: Statistical and Practical Significance Testing for Adverse Impact in Selection Decisions
+Version: 0.0.0.93
 Authors@R: c(
-    person("Dragos", "Iliescu", email = "dragos.iliescu@fpse.unibuc.ro", role = "cre"),
-    person("George", "Gunnesch-Luca", email = "george.gunnesch-luca@fau.de", role = "aut"))
+    person("Dragos", "Iliescu", email = "dragos.iliescu@fpse.unibuc.ro", role = c("cre", "aut", "ctb")),
+    person("George", "Gunnesch-Luca", email = "george.gunnesch-luca@fau.de", role = c("aut", "ctb")),
+    person("Deborah", "Rupp", email = "drupp2@gmu.edu", role = "ctb"),
+    person("Anna Walker", "Nottingham", email = "anottin@gmu.edu", role = "ctb"))
 Description: This R package provides a suite of functions for assessing adverse impact in employee selection and hiring procedures. Adverse impact occurs when a selection procedure disproportionately excludes members of a protected class, such as race or gender. The package includes functions to compute statistical tests, such as the Z-test and LMP test, as well as practical measures, like the h-statistic, Phi-coefficient, and adjusted shortfall. By offering a comprehensive set of tools, this package helps organizations evaluate their selection procedures and make data-driven decisions to minimize adverse impact and promote fairness in the hiring process.
 License: MIT + file LICENSE
 Encoding: UTF-8

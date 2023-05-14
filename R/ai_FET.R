@@ -17,10 +17,10 @@
 #' NPmin <- 75
 #' NFmaj <- 100
 #' NPmaj <- 300
-#' ai_FET(NFmin, NPmin, NFmaj, NPmaj)
+#' ai_fet(NFmin, NPmin, NFmaj, NPmaj)
 #'
 #' @importFrom stats dhyper
-ai_FET <- function(NFmin, NPmin, NFmaj, NPmaj) {
+ai_fet <- function(NFmin, NPmin, NFmaj, NPmaj) {
   # Calculate the total number of minority and majority group members
   Nmin <- NFmin + NPmin
   Nmaj <- NFmaj + NPmaj

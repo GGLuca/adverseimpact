@@ -4,16 +4,22 @@
 \name{adverseimpact-package}
 \alias{adverseimpact}
 \alias{adverseimpact-package}
-\title{adverseimpact: Statistical and Practical Significance Testing for Adverse Ampact in Selection Decisions}
+\title{adverseimpact: Statistical and Practical Significance Testing for Adverse Impact in Selection Decisions}
 \description{
 This R package provides a suite of functions for assessing adverse impact in employee selection and hiring procedures. Adverse impact occurs when a selection procedure disproportionately excludes members of a protected class, such as race or gender. The package includes functions to compute statistical tests, such as the Z-test and LMP test, as well as practical measures, like the h-statistic, Phi-coefficient, and adjusted shortfall. By offering a comprehensive set of tools, this package helps organizations evaluate their selection procedures and make data-driven decisions to minimize adverse impact and promote fairness in the hiring process.
 }
 \author{
-\strong{Maintainer}: Dragos Iliescu \email{dragos.iliescu@fpse.unibuc.ro}
+\strong{Maintainer}: Dragos Iliescu \email{dragos.iliescu@fpse.unibuc.ro} [contributor]
 
 Authors:
 \itemize{
-  \item George Gunnesch-Luca \email{george.gunnesch-luca@fau.de}
+  \item George Gunnesch-Luca \email{george.gunnesch-luca@fau.de} [contributor]
+}
+
+Other contributors:
+\itemize{
+  \item Deborah Rupp \email{drupp2@gmu.edu} [contributor]
+  \item Anna Walker Nottingham \email{anottin@gmu.edu} [contributor]
 }
 
 }
