@@ -1,6 +1,6 @@
 Package: adverseimpact
 Title: Statistical and Practical Significance Testing for Adverse Impact in Selection Decisions
-Version: 0.0.0.93
+Version: 0.0.0.95
 Authors@R: c(
     person("Dragos", "Iliescu", email = "dragos.iliescu@fpse.unibuc.ro", role = c("cre", "aut", "ctb")),
     person("George", "Gunnesch-Luca", email = "george.gunnesch-luca@fau.de", role = c("aut", "ctb")),
