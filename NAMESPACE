@@ -2,6 +2,7 @@
 
 export(ai_LMP)
 export(ai_ad)
+export(ai_chi)
 export(ai_disparity)
 export(ai_fet)
 export(ai_hstat)
