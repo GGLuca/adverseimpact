@@ -34,5 +34,5 @@ ai_hstat <- function(NFmin, NPmin, NFmaj, NPmaj) {
   hstat  <- 2*(asin(SRmaj)-asin(SRmin))
 
   #returning the hstat value
-  return(hstat)
+  return(data.frame(H = hstat))
 }

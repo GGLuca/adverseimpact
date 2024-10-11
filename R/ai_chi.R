@@ -8,7 +8,7 @@
 #' @param NFmaj Number of non-selected individuals in the majority group
 #' @param NPmaj Number of selected individuals in the majority group
 #'
-#' @return The computed Chi-square statistic and associated probability level
+#' @return The computed Chi-square statistic and associated probability level (Two-tailed and One-tailed).
 #' @importFrom stats pchisq
 #' @export
 #'
@@ -23,11 +23,17 @@ ai_chi <- function(NFmin, NPmin, NFmaj, NPmaj) {
   NPt  <- NPmin + NPmaj
   N    <- NFt + NPt
 
-ChiSq  <- (N * (NFmin * NPmaj - NFmaj * NPmin)^2) / (Nmin * Nmaj * NPt * NFt)
+  chi.1 = (N * (NFmin * NPmaj - NFmaj * NPmin) ^ 2)
+  chi.2 = Nmin * Nmaj;   chi.3 = NPt * NFt
+  ChiSq = chi.1 / chi.2; ChiSq = ChiSq / chi.3
 
-  # Calculate p-value
-  df   <- 1  # degrees of freedom for a 2x2 contingency table
-  p_value <- 1 - pchisq(ChiSq, df)
+#ChiSq  <- (N * (NFmin * NPmaj - NFmaj * NPmin)^2) / (Nmin * Nmaj * NPt * NFt)
 
-  return(list(ChiSq=ChiSq, p_value=p_value))
+  # Calculate p-value (Two-tailed and One-tailed at 1 df)
+  p_value_2 <- 1 - pchisq(ChiSq, 1); p_value_1 <- 1 - pchisq(ChiSq, 1) / 2
+
+  ret.val <- data.frame(ChiSq = ChiSq,
+                        p_value = c(p_value_2, p_value_1),
+                        tails = c("Two-tailed", "One-tailed"))
+  return(ret.val)
 }

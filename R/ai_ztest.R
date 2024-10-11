@@ -10,7 +10,7 @@
 #' @param NPmaj Number of participants passing the selection procedure from the majority group
 #'
 #' @importFrom stats dhyper
-#' @return A data frame containing the z-score and associated p-value.
+#' @return A data frame containing the z-score and associated p-value (Two-tailed and One-tailed).
 #' @export
 #'
 #' @examples
@@ -40,14 +40,12 @@ ai_ztest <- function(NFmin, NPmin, NFmaj, NPmaj) {
   # calculate the Z-score using the formula
   z <- (p1 - p2) / sqrt(p * (1 - p) * ((1/Nmin) + (1/Nmaj)))
 
-  # calculate the p-value assuming a two-tailed test
-  p_value_2 <- 2 * (1 - pnorm(abs(z)))
-
-  # calculate the p-value assuming a one-tailed test
-  p_value_1 <- 1 * (1 - pnorm(abs(z)))
-
-  p_value <- c(p_value_2, p_value_1)
+  # calculate the p-value assuming a two-tailed and one-tailed test
+  p_value_2 <- 2 * (1 - pnorm(abs(z))); p_value_1 <- 1 * (1 - pnorm(abs(z)))
+  ret.val <- data.frame(z_score = z,
+                       p_value = c(p_value_2, p_value_1),
+                       tails = c("Two-tailed", "One-tailed"))
 
   # return the Z-score and p-value as a list
-  return(data.frame(z_score = z, p_value = p_value))
+  return(ret.val)
 }

@@ -22,22 +22,11 @@
 #' result
 
 ai_sfadj <- function(NFmin, NPmin, NFmaj, NPmaj) {
-  # Calculate the total number of minority (Nmin) and majority (Nmaj) applicants
-  Nmin <- NFmin + NPmin
-  Nmaj <- NFmaj + NPmaj
-
-  # Calculate the selection rate for the majority group (SRmaj)
-  SRmaj <- NPmaj / Nmaj
-
-  # Calculate the expected number of selected minority applicants based on the majority group's selection rate
-  expected_min_selected <- ceiling(SRmaj * Nmin)
-
-  # Calculate the shortfall (SF) by subtracting the actual number of selected minority applicants (NPmin)
-  # from the expected number of selected minority applicants (based on the majority group's selection rate)
-  SF <- expected_min_selected - NPmin
+  # Computing shortfall
+  SF <- as.numeric(ai_sf(NFmin, NPmin, NFmaj, NPmaj))
 
   # Calculate the adjusted shortfall (SFadj) by dividing the shortfall (SF) by the total number of minority applicants (Nmin)
-  SFadj <- SF / (NFmin + NPmin)
+  SFadj <- SF / (NPmaj + NPmin)
 
-  return(SFadj)
+  return(data.frame(ASF = SFadj))
 }

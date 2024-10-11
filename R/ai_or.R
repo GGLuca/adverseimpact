@@ -30,5 +30,5 @@ ai_odds <- function(NFmin, NPmin, NFmaj, NPmaj) {
   odds_ratio <- odds_g1 / odds_g2
 
   # returning the odds ratio
-  return(odds_ratio)
+  return(data.frame(OR = odds_ratio))
 }

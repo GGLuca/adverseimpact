@@ -31,5 +31,5 @@ ai_sf<- function(NFmin, NPmin, NFmaj, NPmaj) {
   SF <- ceiling(NPmaj / (NFmaj + NPmaj) * Nmin) - NPmin   # SF calculation using the provided formula
 
   # Return the SF value as output
-  return(SF)
+  return(data.frame(SF = SF))
 }

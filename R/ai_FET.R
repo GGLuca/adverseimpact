@@ -9,7 +9,7 @@
 #' @param NFmaj The number of non-favored outcomes for the majority group
 #' @param NPmaj The number of favored outcomes for the majority group
 #'
-#' @return A numeric value representing the FET statistic
+#' @return A numeric value representing the FET statistic (Two-tailed and One-tailed).
 #' @export
 #'
 #' @examples
@@ -31,7 +31,12 @@ ai_fet <- function(NFmin, NPmin, NFmaj, NPmaj) {
   for (i in 0:NPmin) {
     FEThyp <- FEThyp + dhyper(NPmaj + i, Nmaj, Nmin, NPt)
   }
-  FEThyp <- FEThyp * 2
 
-  return(FEThyp)
+  # Calculate p-value (Two-tailed and One-tailed)
+  p_value_2 <- FEThyp * 2; p_value_1 <- FEThyp
+
+  ret.val <- data.frame(FEThyp = FEThyp,
+                        p_value = c(p_value_2, p_value_1),
+                        tails = c("Two-tailed", "One-tailed"))
+  return(ret.val)
 }

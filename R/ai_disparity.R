@@ -38,5 +38,5 @@ ai_disp <- function(NFmin, NPmin, NFmaj, NPmaj) {
   AI <- ceiling(AD * NPt)
 
   # Return the absolute disparity (AD) and absolute impact (AI)
-  return(c(AD, AI))
+  return(data.frame(AD=AD, AI=AI))
 }
