@@ -41,7 +41,12 @@ ai_ztest <- function(NFmin, NPmin, NFmaj, NPmaj) {
   z <- (p1 - p2) / sqrt(p * (1 - p) * ((1/Nmin) + (1/Nmaj)))
 
   # calculate the p-value assuming a two-tailed test
-  p_value <- 2 * (1 - pnorm(abs(z)))
+  p_value_2 <- 2 * (1 - pnorm(abs(z)))
+
+  # calculate the p-value assuming a one-tailed test
+  p_value_1 <- 1 * (1 - pnorm(abs(z)))
+
+  p_value <- c(p_value_2, p_value_1)
 
   # return the Z-score and p-value as a list
   return(data.frame(z_score = z, p_value = p_value))
