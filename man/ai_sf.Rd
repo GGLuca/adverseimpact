@@ -16,7 +16,7 @@ ai_sf(NFmin, NPmin, NFmaj, NPmaj)
 \item{NPmaj}{Number of participants passing the selection procedure from the majority group}
 }
 \value{
-A numeric value representing the Shortfall (SF) value.
+A dataset representing the Shortfall (SF) value.
 }
 \description{
 This function calculates the Shortfall (SF) value, which represents the difference between

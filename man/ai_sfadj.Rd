@@ -16,7 +16,7 @@ ai_sfadj(NFmin, NPmin, NFmaj, NPmaj)
 \item{NPmaj}{Number of participants passing the selection procedure from the majority group}
 }
 \value{
-A numeric value representing the adjusted shortfall (SFadj) calculated as the
+A dataset representing the adjusted shortfall (SFadj) calculated as the
 shortfall (SF) divided by the total number of minority applicants (Nmin).
 }
 \description{

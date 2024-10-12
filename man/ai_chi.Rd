@@ -16,14 +16,21 @@ ai_chi(NFmin, NPmin, NFmaj, NPmaj)
 \item{NPmaj}{Number of selected individuals in the majority group}
 }
 \value{
-The computed Chi-square statistic and associated probability level
+The a dataframe with computed Chi-square statistic and associated probability level (Two-tailed and One-tailed).
 }
 \description{
 This function calculates the chi-square statistic based on selected and non-selected individuals in two groups
 (e.g., minority and majority).
 }
 \examples{
-ai_chi(40, 60, 25, 75)
-ai_chi(1771, 338, 25, 532)
+# Example data
+NFmin <- 10 # Number of participants failing the selection procedure from the minority group
+NPmin <- 5  # Number of participants passing the selection procedure from the minority group
+NFmaj <- 30 # Number of participants failing the selection procedure from the majority group
+NPmaj <- 15 # Number of participants passing the selection procedure from the majority group
+
+# Perform the two-sample proportion test
+result <- ai_chi(NFmin, NPmin, NFmaj, NPmaj)
+result
 
 }

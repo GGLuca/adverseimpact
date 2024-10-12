@@ -5,7 +5,7 @@
 #' @param NFmaj number of participants failing the selection procedure from the majority group
 #' @param NPmaj Number of participants passing the selection procedure from the majority group
 #'
-#' @return A numeric value representing the adjusted shortfall (SFadj) calculated as the
+#' @return A dataset representing the adjusted shortfall (SFadj) calculated as the
 #'   shortfall (SF) divided by the total number of minority applicants (Nmin).
 #'
 #' @export

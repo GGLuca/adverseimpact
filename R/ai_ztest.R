@@ -25,27 +25,21 @@
 #' result
 
 ai_ztest <- function(NFmin, NPmin, NFmaj, NPmaj) {
+  #NFmin <- 10;  NPmin <- 5;  NFmaj <- 30; NPmaj <- 15
 
-  # calculate the total sample size of the minority group and majority group
-  Nmin <- NFmin + NPmin # number of individuals in the minority group
-  Nmaj <- NFmaj + NPmaj # number of individuals in the majority group
+  # Extract total statistics
+  ts <- ai_tot(NFmin, NPmin, NFmaj, NPmaj)
 
-  # calculate the proportion of individuals with the feature in the minority and majority groups
-  p1 <- NPmin / Nmin # proportion of individuals with feature in minority group
-  p2 <- NPmaj / Nmaj # proportion of individuals with feature in majority group
+  # Calculate the Z-score using the formula
+  z <- (ts$Pmin - ts$Pmaj) / sqrt(ts$Ptot * (1 - ts$Ptot) * ((1 / ts$Nmin) + (1 / ts$Nmaj)))
 
-  # calculate overall proportion of individuals with the feature
-  p <- (NPmin + NPmaj) / (Nmin + Nmaj)
+  # Calculate the p-value assuming a two-tailed and one-tailed test
+  p_2 <- 2 * (1 - pnorm(abs(z))); p_1 <- 1 * (1 - pnorm(abs(z)))
 
-  # calculate the Z-score using the formula
-  z <- (p1 - p2) / sqrt(p * (1 - p) * ((1/Nmin) + (1/Nmaj)))
-
-  # calculate the p-value assuming a two-tailed and one-tailed test
-  p_value_2 <- 2 * (1 - pnorm(abs(z))); p_value_1 <- 1 * (1 - pnorm(abs(z)))
-  ret.val <- data.frame(z_score = z,
-                       p_value = c(p_value_2, p_value_1),
-                       tails = c("Two-tailed", "One-tailed"))
-
-  # return the Z-score and p-value as a list
-  return(ret.val)
+  # Return the Z-score and p-value as a dataframe
+  return(data.frame(z_score = z,
+                    p_value = c(p_2, p_1),
+                    tails = c("Two-tailed", "One-tailed")))
 }
+
+

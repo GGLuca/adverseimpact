@@ -5,7 +5,7 @@
 #' @param NFmaj Number of participants failing the selection procedure from the majority group
 #' @param NPmaj Number of participants passing the selection procedure from the majority group
 #'
-#' @return A vector containing the absolute disparity (AD) and absolute impact (AI)
+#' @return A dataset containing the absolute disparity (AD) and absolute impact (AI)
 #' @export
 #'
 #' @examples

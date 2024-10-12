@@ -9,7 +9,7 @@
 #' @param NFmaj Number of participants failing the selection procedure from the majority group
 #' @param NPmaj Number of participants passing the selection procedure from the majority group
 #'
-#' @return A numeric value representing the Impact Ratio (IR) between the minority and majority groups.
+#' @return A dataset representing the Impact Ratio (IR) between the minority and majority groups.
 #' @export
 #'
 #' @examples
@@ -24,11 +24,11 @@
 #' result
 
 ai_ir <- function(NFmin, NPmin, NFmaj, NPmaj){
-  Nmin <- NFmin + NPmin
-  Nmaj <- NFmaj + NPmaj
+  #NFmin <- 10;  NPmin <- 5;  NFmaj <- 30; NPmaj <- 15
 
-  SRmin <- NPmin / Nmin
-  SRmaj <- NPmaj / Nmaj
-  IR <- SRmin / SRmaj
+  # Extract total statistics
+  ts <- ai_tot(NFmin, NPmin, NFmaj, NPmaj)
+
+  IR <- ts$SRmin / ts$SRmaj
   return(data.frame(IR = IR))
 }

@@ -16,7 +16,7 @@ ai_disp(NFmin, NPmin, NFmaj, NPmaj)
 \item{NPmaj}{Number of participants passing the selection procedure from the majority group}
 }
 \value{
-A vector containing the absolute disparity (AD) and absolute impact (AI)
+A dataset containing the absolute disparity (AD) and absolute impact (AI)
 }
 \description{
 Adverse Impact Disparity Calculation

@@ -16,7 +16,7 @@ ai_ztest(NFmin, NPmin, NFmaj, NPmaj)
 \item{NPmaj}{Number of participants passing the selection procedure from the majority group}
 }
 \value{
-A data frame containing the z-score and associated p-value.
+A data frame containing the z-score and associated p-value (Two-tailed and One-tailed).
 }
 \description{
 This function calculates the Z-score and associated p-value for a two-sample proportion test

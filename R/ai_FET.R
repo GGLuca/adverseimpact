@@ -9,7 +9,7 @@
 #' @param NFmaj The number of non-favored outcomes for the majority group
 #' @param NPmaj The number of favored outcomes for the majority group
 #'
-#' @return A numeric value representing the FET statistic (Two-tailed and One-tailed).
+#' @return A dataframe representing the FET statistic (One-tailed on;y).
 #' @export
 #'
 #' @examples
@@ -21,22 +21,18 @@
 #'
 #' @importFrom stats dhyper
 ai_fet <- function(NFmin, NPmin, NFmaj, NPmaj) {
-  # Calculate the total number of minority and majority group members
-  Nmin <- NFmin + NPmin
-  Nmaj <- NFmaj + NPmaj
-  NPt <- NPmin + NPmaj
+  #NFmin <- 10;  NPmin <- 5;  NFmaj <- 30; NPmaj <- 15
+
+  # Extract total statistics
+  ts <- ai_tot(NFmin, NPmin, NFmaj, NPmaj)
 
   # Calculate the Fisher's Exact Test statistic (FEThyp)
   FEThyp <- 0
   for (i in 0:NPmin) {
-    FEThyp <- FEThyp + dhyper(NPmaj + i, Nmaj, Nmin, NPt)
+    FEThyp <- FEThyp + dhyper(NPmaj + i, ts$Nmaj, ts$Nmin, ts$Npas)
   }
 
-  # Calculate p-value (Two-tailed and One-tailed)
-  p_value_2 <- FEThyp * 2; p_value_1 <- FEThyp
-
-  ret.val <- data.frame(FEThyp = FEThyp,
-                        p_value = c(p_value_2, p_value_1),
-                        tails = c("Two-tailed", "One-tailed"))
-  return(ret.val)
+  # Calculate p-value (only One-tailed)
+  p_1 <- FEThyp
+  return(data.frame(FEThyp = FEThyp, p_value = p_1, tails = "One-tailed"))
 }

@@ -16,7 +16,7 @@ ai_ir(NFmin, NPmin, NFmaj, NPmaj)
 \item{NPmaj}{Number of participants passing the selection procedure from the majority group}
 }
 \value{
-A numeric value representing the Impact Ratio (IR) between the minority and majority groups.
+A dataset representing the Impact Ratio (IR) between the minority and majority groups.
 }
 \description{
 This function calculates the Impact Ratio (IR) by dividing the selection rate of the minority group (SRmin)

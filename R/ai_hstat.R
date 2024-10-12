@@ -9,7 +9,7 @@
 #' @param NFmaj Number of participants failing the selection procedure from the majority group
 #' @param NPmaj Number of participants passing the selection procedure from the majority group
 #'
-#' @return A numeric value representing the H-Statistic.
+#' @return A dataset representing the H-Statistic.
 #' @export
 #'
 #' @examples
@@ -24,14 +24,13 @@
 #' result
 
 ai_hstat <- function(NFmin, NPmin, NFmaj, NPmaj) {
+  #NFmin <- 10;  NPmin <- 5;  NFmaj <- 30; NPmaj <- 15
 
-  Nmin   <- NFmin + NPmin
-  Nmaj   <- NFmaj + NPmaj
-  SRmin  <- NPmin / Nmin
-  SRmaj  <- NPmaj / Nmaj
+  # Extract total statistics
+  ts <- ai_tot(NFmin, NPmin, NFmaj, NPmaj)
 
-  #calculating the hstat value
-  hstat  <- 2*(asin(SRmaj)-asin(SRmin))
+  # Calculating the hstat value
+  hstat  <- 2 * (asin(ts$SRmaj) - asin(ts$SRmin))
 
   #returning the hstat value
   return(data.frame(H = hstat))

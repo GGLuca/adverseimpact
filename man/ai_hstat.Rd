@@ -16,7 +16,7 @@ ai_hstat(NFmin, NPmin, NFmaj, NPmaj)
 \item{NPmaj}{Number of participants passing the selection procedure from the majority group}
 }
 \value{
-A numeric value representing the H-Statistic.
+A dataset representing the H-Statistic.
 }
 \description{
 This function calculates the H-Statistic, a measure of the difference between the arcsine-transformed

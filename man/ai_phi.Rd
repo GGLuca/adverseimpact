@@ -16,7 +16,7 @@ ai_phi(NFmin, NPmin, NFmaj, NPmaj)
 \item{NPmaj}{Number of participants passing the selection procedure from the majority group}
 }
 \value{
-A numeric value representing the Phi coefficient.
+A dataset representing the Phi coefficient.
 }
 \description{
 This function calculates the Phi coefficient, a measure of association between two binary variables.

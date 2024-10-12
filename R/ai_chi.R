@@ -8,32 +8,35 @@
 #' @param NFmaj Number of non-selected individuals in the majority group
 #' @param NPmaj Number of selected individuals in the majority group
 #'
-#' @return The computed Chi-square statistic and associated probability level (Two-tailed and One-tailed).
+#' @return The a dataframe with computed Chi-square statistic and associated probability level (Two-tailed and One-tailed).
 #' @importFrom stats pchisq
 #' @export
 #'
 #' @examples
-#' ai_chi(40, 60, 25, 75)
-#' ai_chi(1771, 338, 25, 532)
+#' # Example data
+#' NFmin <- 10 # Number of participants failing the selection procedure from the minority group
+#' NPmin <- 5  # Number of participants passing the selection procedure from the minority group
+#' NFmaj <- 30 # Number of participants failing the selection procedure from the majority group
+#' NPmaj <- 15 # Number of participants passing the selection procedure from the majority group
+#'
+#' # Perform the two-sample proportion test
+#' result <- ai_chi(NFmin, NPmin, NFmaj, NPmaj)
+#' result
 #'
 ai_chi <- function(NFmin, NPmin, NFmaj, NPmaj) {
-  Nmin <- NFmin + NPmin
-  Nmaj <- NFmaj + NPmaj
-  NFt  <- NFmin + NFmaj
-  NPt  <- NPmin + NPmaj
-  N    <- NFt + NPt
+  #NFmin <- 10;  NPmin <- 5;  NFmaj <- 30; NPmaj <- 15
 
-  chi.1 = (N * (NFmin * NPmaj - NFmaj * NPmin) ^ 2)
-  chi.2 = Nmin * Nmaj;   chi.3 = NPt * NFt
+  # Extract total statistics
+  ts <- ai_tot(NFmin, NPmin, NFmaj, NPmaj)
+
+  chi.1 = ts$Ntot * (NFmin * NPmaj - NFmaj * NPmin) ^ 2
+  chi.2 = ts$Nmin * ts$Nmaj;   chi.3 = ts$Npas * ts$Nfai
   ChiSq = chi.1 / chi.2; ChiSq = ChiSq / chi.3
 
-#ChiSq  <- (N * (NFmin * NPmaj - NFmaj * NPmin)^2) / (Nmin * Nmaj * NPt * NFt)
-
   # Calculate p-value (Two-tailed and One-tailed at 1 df)
-  p_value_2 <- 1 - pchisq(ChiSq, 1); p_value_1 <- 1 - pchisq(ChiSq, 1) / 2
+  p_2 <- 1 - pchisq(ChiSq, 1); p_1 <- 1 - pchisq(ChiSq, 1) / 2
 
-  ret.val <- data.frame(ChiSq = ChiSq,
-                        p_value = c(p_value_2, p_value_1),
-                        tails = c("Two-tailed", "One-tailed"))
-  return(ret.val)
+  return(data.frame(ChiSq = ChiSq,
+                    p_value = c(p_2, p_1),
+                    tails = c("Two-tailed", "One-tailed")))
 }

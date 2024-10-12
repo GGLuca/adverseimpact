@@ -9,7 +9,7 @@
 #' @param NFmaj Number of participants failing the selection procedure from the majority group
 #' @param NPmaj Number of participants passing the selection procedure from the majority group
 #'
-#' @return A numeric value representing the Shortfall (SF) value.
+#' @return A dataset representing the Shortfall (SF) value.
 #' @export
 #'
 #' @examples

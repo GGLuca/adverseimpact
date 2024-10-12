@@ -14,17 +14,14 @@
 #' @examples
 #' ai_odds(30, 70, 40, 60)
 ai_odds <- function(NFmin, NPmin, NFmaj, NPmaj) {
-  # calculating probabilities of passing for each group
-  # for minority group
-  p1 <- NPmin / (NFmin + NPmin)
-  # for majority group
-  p2 <- NPmaj / (NFmaj + NPmaj)
+  #NFmin <- 10;  NPmin <- 5;  NFmaj <- 30; NPmaj <- 15
+
+  # Extract total statistics
+  ts <- ai_tot(NFmin, NPmin, NFmaj, NPmaj)
 
   # calculating odds for each group
-  # for minority group
-  odds_g1 <- p1 / (1 - p1)
-  # for majority group
-  odds_g2 <- p2 / (1 - p2)
+  odds_g1 <- ts$Pmin / (1 - ts$Pmin)
+  odds_g2 <- ts$Pmaj / (1 - ts$Pmaj)
 
   # calculating odds ratio
   odds_ratio <- odds_g1 / odds_g2

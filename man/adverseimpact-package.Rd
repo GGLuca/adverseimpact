@@ -14,6 +14,7 @@ This R package provides a suite of functions for assessing adverse impact in emp
 Authors:
 \itemize{
   \item George Gunnesch-Luca \email{george.gunnesch-luca@fau.de} [contributor]
+  \item Cristian Opariuc-Dan \email{cristian.opariuc@fpse.unibuc.ro} [contributor]
 }
 
 Other contributors:

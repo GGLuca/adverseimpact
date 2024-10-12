@@ -20,14 +20,17 @@
 #' NPmin <- 5  # Number of participants passing the selection procedure from the minority group
 #' NFmaj <- 30 # Number of participants failing the selection procedure from the majority group
 #' NPmaj <- 15 # Number of participants passing the selection procedure from the majority group
-#' absolute_difference <- ai_absdif(p1, p2)
+#' absolute_difference <- ai_absdif(NFmin, NPmin, NFmaj, NPmaj)
 #' print(absolute_difference)
 #'
 #' @export
 ai_absdif <- function(NFmin, NPmin, NFmaj, NPmaj) {
-  Nmin <- NFmin + NPmin ; Nmaj <- NFmaj + NPmaj
-  p1 <- NPmin / Nmin ;p2 <- NPmaj / Nmaj
+  #NFmin <- 10;  NPmin <- 5;  NFmaj <- 30; NPmaj <- 15
+
+  # Extract total statistics
+  ts <- ai_tot(NFmin, NPmin, NFmaj, NPmaj)
+
   # Calculate and return the absolute difference in selection rates
-  absolute_difference <- abs(p1 - p2)
+  absolute_difference <- abs(ts$Pmin - ts$Pmaj)
   return(data.frame(ADIFF = absolute_difference))
 }
